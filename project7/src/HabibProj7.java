@@ -7,15 +7,17 @@ public class HabibProj7 {
     public static void main(String[] args) throws InterruptedException {
         //iestablishing global variables
         boolean replay = true;
+        //storing the bank amount
         double bankAmnt = Double.parseDouble(JOptionPane.showInputDialog("Please enter your Bank Amount in decimal form."));
         
         //instantiating a new GUI object with 2 cards
-        //7) it should not show any cards yet because we have no declared any card objects
+        //7) it should not show any cards yet because we have not declared any card objects
         GUI gui = new GUI(2, true);
 
         //8) instantiating a new Deck object default constuctor
         Deck deck1 = new Deck();
 
+        //using boolean to check at the end for replayability
         while (replay) {
             //reset player and deck cards
             gui.clearDeckCard();
@@ -24,10 +26,10 @@ public class HabibProj7 {
             gui.showAmount(bankAmnt);
             gui.showBet(0);
             
-            //shuffling deck1
+            //8)shuffling deck1
             deck1.shuffleDeck();
 
-            //9)store and display the starting amount
+            //9)display the starting amount
             gui.showAmount(bankAmnt);
 
             //10) deal two cards from the deck and store obj references
